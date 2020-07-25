@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{% block titulo %}{% endblock %}</title>
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static 'MariaBonita/bootstrap/css/bootstrap.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'MariaBonita/recursos/css/mariabonita.css' %}">
+    <script src="{% static 'MariaBonita/jquery/jquery-3.5.1.min.js' %} "></script>
+    <script src="{% static 'MariaBonita/bootstrap/js/bootstrap.js' %} "></script>
+    <script src="{% static 'MariaBonita/bootstrap/js/bootstrap.min.js' %} "></script>
+</head>
+
+<body>
+<nav class="navbar navbar-expand-lg navbar-light py-lg-4" id="navPrincipal">
+    <div>
+        <a class="navbar-brand" href="{% url 'mariabonita:index' %}">
+            <img src="{% static 'MariaBonita/recursos/images/logo.jpg' %}" height="80" width="128">
+        </a>
+    </div>
+
+    <div class="collapse navbar-collapse" id="navbarResponsive">
+        <ul class="navbar-nav mx-auto">
+            <li class="nav-item {% if request.path == '/' %} active {% endif %} px-lg-4">
+                <a class="nav-link text-uppercase text-expanded navbar-brand" href="{% url 'mariabonita:index' %}">Inicio</a>
+            </li>
+
+            <li class="nav-item {% if request.path == '/productos' %} active {% endif %} px-lg-4">
+                <a class="nav-link text-uppercase text-expanded navbar-brand" href="{% url 'mariabonita:productos' %}">Productos</a>
+            </li>
+
+            <li class="nav-item {% if request.path == '/categorias' %} active {% endif %} px-lg-4">
+                <a class="nav-link text-uppercase text-expanded navbar-brand" href="{% url 'mariabonita:categorias' %}">Categorías</a>
+            </li>
+        </ul>
+    </div>
+
+</nav>
+
+<p>
+
+</p>
+<!--Contenido Dinamico -->
+{% block contenidodinamico %}
+
+{% endblock %}
+
+<!--Footer-->
+<footer class="footer text-faded text-center py-5">
+    <div class="container">
+        <p class="m-0">
+            <a href="#" class="link">
+                <span class="fa-stack fa-lg">
+	                <i class="fa fa-circle fa-stack-2x"></i>
+	                <i class="fa fa-twitter fa-stack-1x fa-inverse"></i>
+	            </span>
+            </a>
+
+            <a href="#" class="link">
+                <span class="fa-stack fa-lg">
+                  <i class="fa fa-circle fa-stack-2x"></i>
+                  <i class="fa fa-facebook fa-stack-1x fa-inverse"></i>
+                </span>
+              </a>
+
+              <a href="#" class="link">
+                <span class="fa-stack fa-lg">
+                  <i class="fa fa-circle fa-stack-2x"></i>
+                  <i class="fa fa-instagram fa-stack-1x fa-inverse"></i>
+                </span>
+              </a>  
+        </p>
+
+        <p class="m-0 mbt">
+        	<a href="sample.html" class="link">Política de privacidad</a> ·
+        	<a href="sample.html" class="link">Aviso legal</a> ·
+        	<a href="sample.html" class="link">Cookies</a>
+	  	</p>
+
+        <p class="m-0 mbt1">&copy; María Bonita 2020</p>
+    </div>
+</footer>
+
+</body>
+</html>

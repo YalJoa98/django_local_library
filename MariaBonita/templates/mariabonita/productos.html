@@ -1,0 +1,36 @@
+{% extends "mariabonita/base.html" %}
+{% load static %}
+
+{% block titulo %}
+Productos
+{% endblock %}
+
+{% block contenidodinamico %}
+<h3 id="titulo">Productos</h3>
+
+    <div class="card-deck">
+     {% for producto in productos %}
+    
+        <div class="card" style="width: 18rem;" id="contenedor">
+            <img src="{{producto.imagen.url}}" width="256" height="256" style="display: block; margin: auto;">
+            <div class="card-body">
+                <div class="card-header">
+                    <h5 class="card-title">{{producto.nombre}}</h5>
+                </div>  
+
+                <div class="card-body">
+                    <p class="card-text">Categoría: {{producto.categoria}}</p>
+                    <p class="card-text">Precio: $ {{producto.precio}}</p>
+                    <p class="card-text">Codigo: {{producto.codigo}}</p>
+                    <p class="card-text">Descripcion: {{producto.descripcion}}</p>
+                </div>
+
+                <div class="card-footer">
+                    <a href="#" class="btn btn-success">Añadir a Carrito</a>
+                </div>
+            </div>
+        </div>
+     {% endfor %}
+    </div>
+
+{% endblock %}

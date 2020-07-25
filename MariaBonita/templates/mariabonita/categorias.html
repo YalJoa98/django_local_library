@@ -1,0 +1,27 @@
+{% extends "mariabonita/base.html" %}
+{% load static %}
+
+{% block titulo %}
+Categorías
+{% endblock %}
+
+{% block contenidodinamico %}
+<h3 id="titulo">Categorías</h3>
+
+<div class="card-deck">
+    {% for categoria in categorias %}
+        <div class="card text-white bg-secondary mb-3" style="width: 18rem;">
+            <div class="card-header"><h5>{{categoria.nombre}}</h5></div>
+            
+            <div class="card-body">
+                <p class="card-text">{{categoria.descripcion}}</p>
+            </div>
+
+            <div class="card-footer">
+                <a href="{% url 'mariabonita:productos' %}" class="btn btn-success">Ver Productos</a>
+            </div>
+        </div>
+
+    {% endfor %}
+</div>
+{% endblock %}
