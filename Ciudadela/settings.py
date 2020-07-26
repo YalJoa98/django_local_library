@@ -11,6 +11,8 @@ https://docs.djangoproject.com/en/2.2/ref/settings/
 """
 
 import os
+import psycopg2
+import dj_database_url	
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -77,7 +79,7 @@ WSGI_APPLICATION = 'Ciudadela.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/2.2/ref/settings/#databases
 
-DATABASES = {
+"""DATABASES = {
     'default': {
         #'ENGINE': 'django.db.backends.postgresql_psycopg2',
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
@@ -86,9 +88,14 @@ DATABASES = {
         'USER': 'postgres',
         'PASSWORD': '12345',
         'HOST': '',
-        'DATABASE_PORT': '/var/run/postgresql/.s.PGSQL.5432',
+        'DATABASE_PORT': '',
     }
-}
+}"""
+DATABASES['default'] = dj_database_url.config(conn_max_age=600, ssl_require=True)
+
+DATABASE_URL = os.environ['DATABASE_URL']
+
+conn = psycopg2.connect(DATABASE_URL, sslmode='require')
 
 
 # Password validation
