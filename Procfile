@@ -1,1 +1,1 @@
-web: gunicorn MariaBonita.wsgi --log-file -
+web: gunicorn Ciudadela.wsgi --log-file -
