@@ -86,7 +86,7 @@ DATABASES = {
         'USER': 'postgres',
         'PASSWORD': '12345',
         'HOST': '',
-        'DATABASE_PORT': '5432',
+        'DATABASE_PORT': '/var/run/postgresql/.s.PGSQL.5432',
     }
 }
 
