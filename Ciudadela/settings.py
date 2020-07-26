@@ -87,8 +87,8 @@ DATABASES = {
         'NAME': 'principal',
         'USER': 'postgres',
         'PASSWORD': '12345',
-        'HOST': '',
-        'DATABASE_PORT': '',
+        'HOST': '127.0.0.1',
+        'DATABASE_PORT': '5432',
     }
 }
 DATABASES['default'] = dj_database_url.config(conn_max_age=600, ssl_require=True)
