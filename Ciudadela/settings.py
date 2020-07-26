@@ -29,7 +29,9 @@ SECRET_KEY = os.environ.get('DJANGO_SECRET_KEY', 'rm^n9lc2826y2138buz+w^a4xzms_h
 # DEBUG = True
 DEBUG = bool(os.environ.get('DJANGO_DEBUG', True))
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = [
+    'intense-everglades-71354.herokuapp.com',
+]
 
 
 # Application definition
