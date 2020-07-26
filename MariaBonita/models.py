@@ -1,6 +1,8 @@
 from django.db import models
+from django.core.files.storage import FileSystemStorage
 
 # Create your models here.
+fs = FileSystemStorage(location='/media/mariabonita')
 
 class Categoria(models.Model):
     nombre = models.CharField(max_length=50)
@@ -14,7 +16,7 @@ class Productos(models.Model):
     nombre = models.CharField(max_length=150)
     codigo = models.CharField(max_length=25)
     descripcion = models.TextField()
-    imagen = models.ImageField(upload_to='mariabonita')
+    imagen = models.ImageField(upload_to='mariabonita', storage=fs)
     precio = models.DecimalField(max_digits=6, decimal_places=2, default=0.0)
 
     def __str__(self):
