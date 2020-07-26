@@ -13,34 +13,34 @@
 
 <body>
 <div class="container-fluid">
-<nav class="navbar navbar-expand-lg navbar-light py-lg-4" id="navPrincipal">
-    <div>
-        <a class="navbar-brand" href="{% url 'mariabonita:index' %}">
-            <img src="{% static 'MariaBonita/recursos/images/logo.jpg' %}" height="80" width="128">
-        </a>
-    </div>
+    <nav class="navbar navbar-expand-lg navbar-light py-lg-4" id="navPrincipal">
+        <div>
+            <a class="navbar-brand" href="{% url 'mariabonita:index' %}">
+                <img src="{% static 'MariaBonita/recursos/images/logo.jpg' %}" height="80" width="128">
+            </a>
+        </div>
 
-    <div class="collapse navbar-collapse" id="navbarResponsive">
-        <ul class="navbar-nav mx-auto">
-            <li class="nav-item {% if request.path == '/' %} active {% endif %} px-lg-4">
-                <a class="nav-link text-uppercase text-expanded navbar-brand" href="{% url 'mariabonita:index' %}">Inicio</a>
-            </li>
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+            <ul class="navbar-nav mx-auto">
+                <li class="nav-item {% if request.path == '/' %} active {% endif %} px-lg-4">
+                    <a class="nav-link text-uppercase text-expanded navbar-brand" href="{% url 'mariabonita:index' %}">Inicio</a>
+                </li>
 
-            <li class="nav-item {% if request.path == '/productos' %} active {% endif %} px-lg-4">
-                <a class="nav-link text-uppercase text-expanded navbar-brand" href="{% url 'mariabonita:productos' %}">Productos</a>
-            </li>
+                <li class="nav-item {% if request.path == '/productos' %} active {% endif %} px-lg-4">
+                    <a class="nav-link text-uppercase text-expanded navbar-brand" href="{% url 'mariabonita:productos' %}">Productoss</a>
+                </li>
 
-            <li class="nav-item {% if request.path == '/categorias' %} active {% endif %} px-lg-4">
-                <a class="nav-link text-uppercase text-expanded navbar-brand" href="{% url 'mariabonita:categorias' %}">Categorías</a>
-            </li>
-        </ul>
-    </div>
+                <li class="nav-item {% if request.path == '/categorias' %} active {% endif %} px-lg-4">
+                    <a class="nav-link text-uppercase text-expanded navbar-brand" href="{% url 'mariabonita:categorias' %}">Categorías</a>
+                </li>
+            </ul>
+        </div>
 
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarToggleExternalContent" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarToggleExternalContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
 
-</nav>
+    </nav>
 </div>
 <p>
 
