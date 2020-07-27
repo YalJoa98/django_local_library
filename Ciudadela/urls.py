@@ -28,5 +28,5 @@ urlpatterns = [
 urlpatterns += static(settings.MEDIA_URL, document_root = settings.MEDIA_ROOT)
 
 urlpatterns += [
-    path("",RedirectView.as_view(url='/index/',permanent=True))
+    path("",RedirectView.as_view(url='/index/',permanent=False))
 ]
