@@ -6,7 +6,7 @@ from django.conf import settings
 app_name = 'mariabonita'
 
 urlpatterns = [
-    path('', views.Index.as_view(), name="index"),
+    path('index/', views.Index.as_view(), name="index"),
     path('productos/', views.Productos.as_view(), name="productos"),
     path('categorias/', views.Categorias.as_view(), name="categorias"),
 ]
