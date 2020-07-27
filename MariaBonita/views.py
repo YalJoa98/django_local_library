@@ -5,7 +5,7 @@ from . models import Productos, Categoria
 # Create your views here.
 class Index(RedirectView):
     def get(self, request, *args, **kwargs):
-        return render(request, "mariabonita/base.html")
+        return render(request, "mariabonita/index.html")
 
     def post(self, request, *args, **kwargs):
         pass
