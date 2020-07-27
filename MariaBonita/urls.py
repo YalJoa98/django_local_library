@@ -6,9 +6,9 @@ from django.conf import settings
 app_name = 'mariabonita'
 
 urlpatterns = [
-    path('', views.index, name="index"),
-    path('productos/', views.productos, name="productos"),
-    path('categorias/', views.categorias, name="categorias"),
+    path('', views.Index.as_view(), name="index"),
+    path('productos/', views.Productos.as_view(), name="productos"),
+    path('categorias/', views.Categorias.as_view(), name="categorias"),
 ]
 
 urlpatterns += static(settings.MEDIA_URL, document_root = settings.MEDIA_ROOT)
