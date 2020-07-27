@@ -11,9 +11,9 @@ class Index(RedirectView):
         pass
 
 class Productos(RedirectView):
-    productos = Productos.objects.all()
     
     def get(self, request, *args, **kwargs):
+        productos = Productos.objects.all()
         return render(request, "mariabonita/productos.html", {"productos": productos})
 
     def post(self, request, *args, **kwargs):
