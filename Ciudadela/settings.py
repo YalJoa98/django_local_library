@@ -24,16 +24,15 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 # SECURITY WARNING: keep the secret key used in production secret!
 # SECRET_KEY = 'rm^n9lc2826y2138buz+w^a4xzms_h!u#0n0)4=o=ki79j41+j'
-SECRET_KEY = os.environ.get('DJANGO_SECRET_KEY', 'rm^n9lc2826y2138buz+w^a4xzms_h!u#0n0)4=o=ki79j41+j')
+SECRET_KEY = os.environ.get('DJANGO_SECRET_KEY', 'gihDpILPOd+STBSVUDGdLtcH0PI6PlBdM05OMz7z')
 
 # SECURITY WARNING: don't run with debug turned on in production!
 # DEBUG = True
 DEBUG = bool(os.environ.get('DJANGO_DEBUG', True))
 
 ALLOWED_HOSTS = [
-    'intense-everglades-71354.herokuapp.com',
+ #   'intense-everglades-71354.herokuapp.com',
 ]
-
 
 # Application definition
 
@@ -95,11 +94,11 @@ DATABASES = {
         'DATABASE_PORT': '5432',
     }
 }
-DATABASES['default'] = dj_database_url.config(conn_max_age=600, ssl_require=True)
+#DATABASES['default'] = dj_database_url.config(conn_max_age=600, ssl_require=True)
 
-DATABASE_URL = os.environ['DATABASE_URL']
+#DATABASE_URL = os.environ['DATABASE_URL']
 
-conn = psycopg2.connect(DATABASE_URL, sslmode='require')
+#conn = psycopg2.connect(DATABASE_URL, sslmode='require')
 
 
 # Password validation
@@ -147,7 +146,7 @@ LOCALE_PATHS = (
 # https://docs.djangoproject.com/en/2.2/howto/static-files/
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 STATIC_URL = '/static/'
-MEDIA_URL = '/media/'
+MEDIA_URL = 'https://s3.us-east-2.amazonaws.com/mariabonita/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
 STATICFILES_DIRS = (

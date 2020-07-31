@@ -1,13 +1,12 @@
 body{
+    background-color: pink;
     font-family: 'Lora';
     /*background: linear-gradient(rgba(255, 241, 92, 0.65), rgba(47, 23, 15, 0.65), url("/static/MariaBonita/recursos/images/fondoBody.jpg"));*/
     background: linear-gradient(rgba(92, 255, 108, 0.85), rgba(92, 255, 108, 0.85));
-    background-image: url("../images/fondoBody.jpg");
     background-attachment: fixed;
     background-position: center;
-    background-size: cover;
+    background-size: cover
 }
-
 
 #navPrincipal{
     background-color: rgba(240, 252, 3, 0.85);
@@ -36,5 +35,10 @@ body{
 
 .linkNav{
     font-size: 32px;
+}
+
+h1{
+    text-align: center;
+    background-color: rgba(240, 252, 3, 0.85);
 }
 
