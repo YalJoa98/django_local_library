@@ -27,11 +27,12 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = os.environ.get('DJANGO_SECRET_KEY', 'gihDpILPOd+STBSVUDGdLtcH0PI6PlBdM05OMz7z')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-# DEBUG = True
+#DEBUG = True
 DEBUG = bool(os.environ.get('DJANGO_DEBUG', True))
 
 ALLOWED_HOSTS = [
    'intense-everglades-71354.herokuapp.com',
+   #'127.0.0.1:8000',
 ]
 
 # Application definition
@@ -44,6 +45,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'MariaBonita',
+    'storages',
 ]
 
 MIDDLEWARE = [
@@ -144,14 +146,31 @@ LOCALE_PATHS = (
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/2.2/howto/static-files/
-STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+#STATIC_ROOT = 'https://mariabonita.s3.us-east-2.amazonaws.com/MariaBonita/recursos/' 
+#STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+STATIC_ROOT = ''
+#STATIC_URL = 'https://mariabonita.s3.us-east-2.amazonaws.com/MariaBonita/recursos/'
 STATIC_URL = '/static/'
-MEDIA_URL = 'https://s3.us-east-2.amazonaws.com/mariabonita/'
+#MEDIA_URL = 'https://mariabonita.s3.us-east-2.amazonaws.com/mariabonita/'
+MEDIA_URL = '/media/'
+#MEDIA_URL = 'https://s3.us-east-2.amazonaws.com/mariabonita/'
+
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+#MEDIA_ROOT = 'https://mariabonita.s3.us-east-2.amazonaws.com/'
 
 STATICFILES_DIRS = (
-    os.path.join(BASE_DIR, 'static'),
+    os.path.join('static'),
 )
 
-STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
-	
+
+#S3 buckets configuracion
+#AWS_ACCESS_KEY_ID = 'AKIAZDRNVCEWCSCHPJQE'
+#AWS_SECRET_ACCESS_KEY = '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'
+AWS_ACCESS_KEY_ID = ' AKIAZDRNVCEWPVIP2M7N'
+AWS_SECRET_ACCESS_KEY = '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'
+AWS_STORAGE_BUCKET_NAME = 'mariabonita' 
+
+AWS_S3_FILE_OVERWRITE = False 
+AWS_DEFAULT_ACL = None
+DEFAULT_FILE_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
+STATICFILES_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'

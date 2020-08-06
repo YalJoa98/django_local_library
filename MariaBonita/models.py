@@ -14,7 +14,7 @@ class Productos(models.Model):
     nombre = models.CharField(max_length=150)
     codigo = models.CharField(max_length=25)
     descripcion = models.TextField()
-    imagen = models.ImageField(upload_to='mariabonita')
+    imagen = models.ImageField(upload_to='mariabonita') #, storage='https://s3.us-east-2.amazonaws.com/media/mariabonita/'
     precio = models.DecimalField(max_digits=6, decimal_places=2, default=0.0)
 
     def __str__(self):
@@ -27,4 +27,3 @@ class Cliente(models.Model):
     telefono = models.CharField(max_length=12)
     email = models.EmailField()
     fechaNacimiento = models.DateField()
-
