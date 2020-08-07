@@ -3,36 +3,26 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <link rel="icon" href="https://mariabonita.s3.us-east-2.amazonaws.com/staticfiles/MariaBonita/recursos/images/icono.png" sizes="32x32" type="image/png">
+    {% load static %}
+    <link rel="icon" href="{% static 'MariaBonita/recursos/images/icono.png' %}" sizes="32x32" type="image/png">
     <meta charset="UTF-8"​>
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <title>{% block titulo %}{% endblock %}</title>    
-    {% load static %}
-    <!--<link rel="stylesheet" type="text/css" href="{% static 'MariaBonita/bootstrap/css/bootstrap.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'MariaBonita/bootstrap/css/bootstrap.css' %}">
     <link rel="stylesheet" type="text/css" href="{% static 'MariaBonita/recursos/css/mariabonita.css' %}">
     <script src="{% static 'MariaBonita/jquery/jquery-3.5.1.min.js' %} "></script>
     <script src="{% static 'MariaBonita/bootstrap/js/bootstrap.js' %} "></script>
-    <script src="{% static 'MariaBonita/bootstrap/js/bootstrap.min.js' %} "></script>-->
+    <script src="{% static 'MariaBonita/bootstrap/js/bootstrap.min.js' %} "></script>
 
-    <link rel="stylesheet" type="text/css" href="https://mariabonita.s3.us-east-2.amazonaws.com/staticfiles/MariaBonita/bootstrap/css/bootstrap.css">
-    <link rel="stylesheet" type="text/css" href="https://mariabonita.s3.us-east-2.amazonaws.com/staticfiles/MariaBonita/recursos/css/mariabonita.css">
-    <script src="https://mariabonita.s3.us-east-2.amazonaws.com/staticfiles/MariaBonita/jquery/jquery-3.5.1.min.js"></script>
-    <script src="https://mariabonita.s3.us-east-2.amazonaws.com/staticfiles/MariaBonita/bootstrap/js/bootstrap.js"></script>
-    <script src="https://mariabonita.s3.us-east-2.amazonaws.com/staticfiles/MariaBonita/bootstrap/js/bootstrap.min.js"></script>
-</head>
-
-<body>
-<form action="" method="GET">
+<body style="background-image: url('{% static 'MariaBonita/recursos/images/fondoBody.jpg' %}');">
     <nav class="navbar navbar-expand-lg navbar-light py-lg-4" id="navPrincipal">
         <div>
             <a class="navbar-brand" href="{% url 'mariabonita:index' %}">
-                <img src="https://mariabonita.s3.us-east-2.amazonaws.com/static/MariaBonita/recursos/images/logo.jpg" height="80" width="100">
-                <!--<img src="https://mariabonita.s3.us-east-2.amazonaws.com/MariaBonita/recursos/images/logo.jpg" height="80" width="100">-->
-                <!--<img src="{% static 'MariaBonita/recursos/images/logo.jpg' %}" height="80" width="100">-->
+                <img src="{% static 'MariaBonita/recursos/images/logo.jpg' %}" height="80" width="100">
             </a>
         </div>
 
-        <form class="form-inline" action="/resultados/" method="GET">
+        <form class="form-inline" action="/resultados/">
             <input class="form-control mr-sm-2" type="text" placeholder="Buscar" aria-label="Búsqueda" name="buscar">
             <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Buscar</button>
         </form>
@@ -112,6 +102,5 @@
         <p class="m-0 mbt1">&copy; María Bonita 2020</p>
     </div>
 </footer>
-</form>
 </body>
 </html>

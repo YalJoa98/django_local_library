@@ -25,7 +25,7 @@ urlpatterns = [
     path('', include('MariaBonita.urls')),
 ]
 
-urlpatterns += static(settings.MEDIA_URL, document_root = settings.MEDIA_ROOT)
+urlpatterns += static(settings.DEFAULT_FILE_STORAGE, document_root = settings.MEDIA_ROOT)
 
 urlpatterns += [
     path("",RedirectView.as_view(url='',permanent=True))

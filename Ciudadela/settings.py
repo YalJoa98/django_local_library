@@ -31,7 +31,7 @@ SECRET_KEY = os.environ.get('DJANGO_SECRET_KEY', 'gihDpILPOd+STBSVUDGdLtcH0PI6Pl
 DEBUG = bool(os.environ.get('DJANGO_DEBUG', True))
 
 ALLOWED_HOSTS = [
-   'intense-everglades-71354.herokuapp.com',
+   #'intense-everglades-71354.herokuapp.com',
    #'127.0.0.1:8000',
 ]
 
@@ -96,11 +96,11 @@ DATABASES = {
         'DATABASE_PORT': '5432',
     }
 }
-DATABASES['default'] = dj_database_url.config(conn_max_age=600, ssl_require=True)
+#DATABASES['default'] = dj_database_url.config(conn_max_age=600, ssl_require=True)
 
-DATABASE_URL = os.environ['DATABASE_URL']
+#DATABASE_URL = os.environ['DATABASE_URL']
 
-conn = psycopg2.connect(DATABASE_URL, sslmode='require')
+#conn = psycopg2.connect(DATABASE_URL, sslmode='require')
 
 
 # Password validation
@@ -146,27 +146,18 @@ LOCALE_PATHS = (
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/2.2/howto/static-files/
-#STATIC_ROOT = 'https://mariabonita.s3.us-east-2.amazonaws.com/MariaBonita/recursos/' 
-#STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
-STATIC_ROOT = ''
-#STATIC_URL = 'https://mariabonita.s3.us-east-2.amazonaws.com/MariaBonita/recursos/'
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 STATIC_URL = '/static/'
-#MEDIA_URL = 'https://mariabonita.s3.us-east-2.amazonaws.com/mariabonita/'
+MEDIA_ROOT = 'mariabonita.s3.us-east-2.amazonaws.com/'
 MEDIA_URL = '/media/'
-#MEDIA_URL = 'https://s3.us-east-2.amazonaws.com/mariabonita/'
-
-MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
-#MEDIA_ROOT = 'https://mariabonita.s3.us-east-2.amazonaws.com/'
 
 STATICFILES_DIRS = (
     os.path.join('static'),
 )
 
 
-#S3 buckets configuracion
-#AWS_ACCESS_KEY_ID = 'AKIAZDRNVCEWCSCHPJQE'
-#AWS_SECRET_ACCESS_KEY = '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'
-AWS_ACCESS_KEY_ID = ' AKIAZDRNVCEWPVIP2M7N'
+#S3 buckets configuracion'
+AWS_ACCESS_KEY_ID = 'AKIAZDRNVCEWPVIP2M7N'
 AWS_SECRET_ACCESS_KEY = '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'
 AWS_STORAGE_BUCKET_NAME = 'mariabonita' 
 
@@ -174,3 +165,7 @@ AWS_S3_FILE_OVERWRITE = False
 AWS_DEFAULT_ACL = None
 DEFAULT_FILE_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
 STATICFILES_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
+
+#https://github.com/jschneier/django-storages/issues/687
+AWS_S3_REGION_NAME = 'us-east-2' #change to your region
+AWS_S3_SIGNATURE_VERSION = 's3v4'

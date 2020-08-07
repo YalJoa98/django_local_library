@@ -1,8 +1,10 @@
+
 body{
     font-family: 'Lora';
     /*background: linear-gradient(rgba(255, 241, 92, 0.65), rgba(47, 23, 15, 0.65), url("/static/MariaBonita/recursos/images/fondoBody.jpg"));*/
     background: linear-gradient(rgba(92, 255, 108, 0.85), rgba(92, 255, 108, 0.85));
-    background-image: url("../images/fondoBody.jpg");
+    /* background-image: url("../images/fondoBody.jpg"); */
+    /* background-image: image("https://mariabonita.s3.us-east-2.amazonaws.com/MariaBonita/recursos/images/fondoBody.jpg"); */
     background-attachment: fixed;
     background-position: center;
     background-size: cover;
