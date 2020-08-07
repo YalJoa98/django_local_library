@@ -24,7 +24,7 @@ class Index(RedirectView):
         pass
 
 
-class Productos(RedirectView):
+class Producto(RedirectView):
     productos = Productos.objects.all()
 
     def get(self, request, *args, **kwargs):
