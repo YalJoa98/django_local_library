@@ -6,14 +6,13 @@ Productos
 {% endblock %}
 
 {% block contenidodinamico %}
-<form action="" method="GET">
 <h3 id="titulo">Productos</h3>
 
-    <div class="card-deck">
+    <div class="card-columns">
      {% for producto in productos %}
     
         <div class="card" style="width: 18rem;" id="contenedor">
-            <img src="{{producto.imagen.url}}" width="200" height="200" style="display: block; margin:10px auto;">
+            <img class="card-img-top" src="{{producto.imagen.url}}" alt="Card image cap">
             <div class="card-body">
                 <div class="card-header">
                     <h5 class="card-title">{{producto.nombre}}</h5>
@@ -33,5 +32,4 @@ Productos
         </div>
      {% endfor %}
     </div>
-</form>
 {% endblock %}
