@@ -6,11 +6,11 @@ from django.conf import settings
 app_name = 'mariabonita'
 
 urlpatterns = [
-    path('index/', views.index, name="index"),
-    path('productos/', views.productos, name="productos"),
-    path('categorias/', views.categorias, name="categorias"),
-    path('resultados/',views.resultados, name="buscar"),
-    path('registro/', views.registro, name="registro"),
+    path('index/', views.Index.as_view(), name="index"),
+    path('productos/', views.Productos.as_view(), name="productos"),
+    path('categorias/', views.Categorias.as_view(), name="categorias"),
+    path('resultados/',views.Resultados.as_view(), name="buscar"),
+    path('registro/', views.Registro.as_view(), name="registro"),
 ]
 
 urlpatterns += static(settings.DEFAULT_FILE_STORAGE, document_root = settings.MEDIA_ROOT)
