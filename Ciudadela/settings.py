@@ -31,7 +31,7 @@ SECRET_KEY = os.environ.get('DJANGO_SECRET_KEY', 'gihDpILPOd+STBSVUDGdLtcH0PI6Pl
 DEBUG = bool(os.environ.get('DJANGO_DEBUG', True))
 
 ALLOWED_HOSTS = [
-   #'intense-everglades-71354.herokuapp.com',
+   'intense-everglades-71354.herokuapp.com',
    #'127.0.0.1:8000',
 ]
 
@@ -96,11 +96,11 @@ DATABASES = {
         'DATABASE_PORT': '5432',
     }
 }
-#DATABASES['default'] = dj_database_url.config(conn_max_age=600, ssl_require=True)
+DATABASES['default'] = dj_database_url.config(conn_max_age=600, ssl_require=True)
 
-#DATABASE_URL = os.environ['DATABASE_URL']
+DATABASE_URL = os.environ['DATABASE_URL']
 
-#conn = psycopg2.connect(DATABASE_URL, sslmode='require')
+conn = psycopg2.connect(DATABASE_URL, sslmode='require')
 
 
 # Password validation
