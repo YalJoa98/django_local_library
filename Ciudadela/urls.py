@@ -25,6 +25,10 @@ urlpatterns = [
     path('', include('MariaBonita.urls')),
 ]
 
+urlpatterns += [
+    path('registro/', include('django.contrib.auth.urls')),
+]
+
 urlpatterns += static(settings.DEFAULT_FILE_STORAGE, document_root = settings.MEDIA_ROOT)
 
 urlpatterns += [

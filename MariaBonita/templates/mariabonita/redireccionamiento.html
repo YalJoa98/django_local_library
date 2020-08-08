@@ -1,0 +1,29 @@
+{% extends "mariabonita/baseDos.html" %}
+{% load static %}
+
+{% block titulo %}
+Redirigiendo
+{% endblock %}
+
+{% block contenidodinamico %}
+
+<div class="container mt-5">
+    <div class="row">
+        <div class="col-md-6 ml-auto mr-auto">
+            <div class="card mt-3 ">
+                <div class="card-header bg-warning text-center"><h3>{{respuesta}}</h3></div>
+                <div class="card-body">
+                    <p class="text-primary text-center">Redireccionandote...........</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script>
+    function redireccionar(){
+    window.location.href = "{% url 'mariabonita:acceso'%}"
+    }
+    setTimeout(redireccionar,3000);
+</script>
+
+{% endblock %}

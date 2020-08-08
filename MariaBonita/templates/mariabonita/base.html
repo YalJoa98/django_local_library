@@ -27,6 +27,7 @@
             <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Buscar</button>
         </form>
 
+        {% if user.is_authenticated %}
         <div class="collapse navbar-collapse" id="navbarResponsive">
             <ul class="navbar-nav mx-auto">
                 <li class="nav-item {% if request.path == '/' %} active {% endif %} px-lg-3">
@@ -40,17 +41,33 @@
                 <li class="nav-item {% if request.path == '/categorias' %} active {% endif %} px-lg-3">
                     <a class="nav-link text-uppercase text-expanded navbar-brand" href="{% url 'mariabonita:categorias' %}">{% trans 'Categorías' %}</a>
                 </li>
+                <li class="nav-item active {% if request.path == '/desconectar' %} active {% endif %} px-lg-3">
+                    <a class="nav-link" href="{% url 'mariabonita:desconectar' %}">Desconectar <span class="sr-only">(current)</span></a>
+                </li>
             </ul>
+            {% else %}
             <div>
                 <ul class="navbar-nav ml-auto">
+                    <li class="nav-item {% if request.path == '/' %} active {% endif %} px-lg-3">
+                        <a class="nav-link text-uppercase text-expanded navbar-brand" href="{% url 'mariabonita:index' %}">{% trans 'Inicio' %}</a>
+                    </li>
+    
+                    <li class="nav-item {% if request.path == '/productos' %} active {% endif %} px-lg-3">
+                        <a class="nav-link text-uppercase text-expanded navbar-brand" href="{% url 'mariabonita:productos' %}">{% trans 'Productos' %}</a>
+                    </li>
+    
+                    <li class="nav-item {% if request.path == '/categorias' %} active {% endif %} px-lg-3">
+                        <a class="nav-link text-uppercase text-expanded navbar-brand" href="{% url 'mariabonita:categorias' %}">{% trans 'Categorías' %}</a>
+                    </li>
                     <li class="nav-item active {% if request.path == '/registro' %} active {% endif %} px-lg-3" >
                         <a class="nav-link" href="{% url 'mariabonita:registro' %}">Registro<span class="sr-only">(current)</span></a>
                     </li>
-                    <li class="nav-item active">
-                        <a class="nav-link" href="#">Iniciar Sesión<span class="sr-only">(current)</span></a>
+                    <li class="nav-item active {% if request.path == '/acceso' %} active {% endif %} px-lg-3">
+                        <a class="nav-link" href="{% url 'mariabonita:acceso' %}">Iniciar Sesión<span class="sr-only">(current)</span></a>
                     </li>
                 </ul>
             </div>
+            {% endif %}
         </div>
 
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarToggleExternalContent" aria-expanded="false" aria-label="Toggle navigation">

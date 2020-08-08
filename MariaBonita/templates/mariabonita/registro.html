@@ -7,59 +7,53 @@ Registro
 
 {% block contenidodinamico %}
 <h1>Registro</h1>
-<form action="">
-    <div class="container">
-        <div class="form-row">
-            <div class="form-group col-xs-12 col-sm-6 col-md-6 col-lg-6">
-                <label>Nombre(s):</label>
-                <input type="text" class="form-control" placeholder="Nombres(s)">
+<div class="container mt-5">
+    <div class="row">
+        <div class="col-md-6 ml-auto mr-auto">
+            <div class="card">
+                <div class="card-header bg-warning text-center"><h3>Registro</h3></div>
+                <div class="card-body">
+                    <form method="post">
+                        {% csrf_token %}
+                        <div class="form-group">
+                            <label for="{{formularioRegistro.nombres.id_for_label}}">{{formularioRegistro.nombres.label}}</label>
+                            {{formularioRegistro.nombres}}
+                        </div>
+                        <div class="form-group">
+                            <label for="{{formularioRegistro.apellidos.id_for_label}}">{{formularioRegistro.apellidos.label}}</label>
+                            {{formularioRegistro.apellidos}}
+                        </div>
+                        <div class="form-group">
+                            <label for="{{formularioRegistro.correoElectronico.id_for_label}}">{{formularioRegistro.correoElectronico.label}}</label>
+                            {{formularioRegistro.correoElectronico}}
+                        </div>
+                        <div class="form-group">
+                            <label for="{{formularioRegistro.contrasena.id_for_label}}">{{formularioRegistro.contrasena.label}}</label>
+                            {{formularioRegistro.contrasena}}
+                        </div>
+                        <div class="form-group">
+                            <label for="{{formularioRegistro.repetirContrasena.id_for_label}}">{{formularioRegistro.repetirContrasena.label}}</label>
+                            {{formularioRegistro.repetirContrasena}}
+                        </div>
+                        {% if  formularioRegistro.non_field_errors %}
+                            {% for error in formularioRegistro.non_field_errors %}
+                                <div class="alert alert-primary tex-center" role="alert">
+                                    {{error}}
+                                </div>
+                            {% endfor %}
+                        {% endif %}
+                        <small id="terminosYcondiciones" class="form-text text-muted text-center">
+                            Usted al hacer clic en "Registrarme" acepta los <a href="#">terminos</a>, <a href="#">codiciones</a>,
+                            <br><a href="#">politica de datos</a> y <a href="#">politica de cookies</a>
+                        </small>
+                        <br>
+                        <div class="col text-center">
+                            <button type="submit" class="btn btn-primary">Registrarme</button>
+                        </div>
+                    </form>
+                </div>
             </div>
-
-            <div class="form-group col-xs-12 col-sm-6 col-md-6 col-lg-6">
-                <label>Apellidos:</label>
-                <input type="text" class="form-control" placeholder="Apellidos">
-            </div>
-
-            <div class="form-group col-xs-12 col-sm-6 col-md-6 col-lg-6">
-                <label>Correo Electrónico:</label>
-                <input type="email" class="form-control" placeholder="Correo Electrónico">
-            </div>
-
-            <div class="form-group col-xs-12 col-sm-6 col-md-6 col-lg-6">
-                <label>Contraseña:</label>
-                <input type="password" class="form-control" placeholder="Contraseña">
-            </div>
-
-            <div class="form-group col-xs-12 col-sm-6 col-md-6 col-lg-6">
-                <label>Dirección:</label>
-                <input type="text" class="form-control" placeholder="Dirección">
-            </div>
-
-            <div class="form-group col-xs-12 col-sm-6 col-md-6 col-lg-6">
-                <label>Dirección 2(Opcional):</label>
-                <input type="text" class="form-control" placeholder="Dirección 2(Opcional)">
-            </div>
-
-            <div class="form-group col-xs-12 col-sm-6 col-md-6 col-lg-6">
-                <label>País:</label>
-                <input type="text" class="form-control" placeholder="País">
-            </div>
-
-            <div class="form-group col-xs-12 col-sm-4 col-md-4 col-lg-4">
-                <label>Estado:</label>
-                <input type="text" class="form-control" placeholder="Estado">
-            </div>
-
-            <div class="form-group col-xs-12 col-sm-2 col-md-2 col-lg-2">
-                <label>Código Postal:</label>
-                <input type="text" class="form-control" placeholder="Código Postal">
-            </div>
-
-            <button type="submit" class="btn btn-primary">Registrar</button>
-            
         </div>
-
-    </div>    
-
-</form>
+    </div>
+</div>
 {% endblock %}

@@ -1,4 +1,4 @@
-from django.urls import path
+from django.urls import path, include
 from . import views
 from django.conf.urls.static import static
 from django.conf import settings
@@ -11,6 +11,14 @@ urlpatterns = [
     path('categorias/', views.Categorias.as_view(), name="categorias"),
     path('resultados/',views.Resultados.as_view(), name="buscar"),
     path('registro/', views.Registro.as_view(), name="registro"),
+    path('activacion/<uidb64>/<token>/',views.VistaActivacionCuenta.as_view(), name='activacion'),
+    path('acceso/',views.VistaAcceso.as_view(), name='acceso'),
+    path('desconectar/',views.VistaDesconectar.as_view(),name='desconectar'),
+    
+]
+
+urlpatterns += [
+    #path('accounts/', include('django.contrib.auth.urls')),
 ]
 
 urlpatterns += static(settings.DEFAULT_FILE_STORAGE, document_root = settings.MEDIA_ROOT)

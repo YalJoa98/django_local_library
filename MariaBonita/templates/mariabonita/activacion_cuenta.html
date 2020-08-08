@@ -1,0 +1,82 @@
+<html>
+<head>
+    <meta charset="UTF-8" name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<!--FondoGedeon-->
+<body style='
+/*background-image: url("https://media-exp1.licdn.com/dms/image/C510BAQG0H27TM_T2sw/company-logo_200_200/0?e=2159024400&v=beta&t=BHZvsI139-YlGEM6gFDvW3ug_DqYjYQnoEP72JxkUAo");*/
+background-color:#252850;
+background-repeat: repeat;
+margin: 0px;
+border-bottom-left-radius: 10px;
+border-bottom-right-radius: 10px;
+'>
+<div style='
+background-color:white;
+'>
+    <h1 style="
+    text-align: center;
+    margin:0px;
+    ">
+        <!--URl Logo Gedeon-->
+        María Bonita
+        <img src="">
+    </h1><br>
+</div>
+
+<div class="card" style="
+margin-left: auto;
+margin-right: auto;
+/*width: 30em;*/
+width: 60%;
+background-color:white;
+/*border: 2px solid white;*/
+border-radius: 10px;
+margin-top: 35px;
+">
+    <div class="card-title" style='
+    background-color:yellow;
+    border-top-right-radius: 10px;
+    border-top-left-radius: 10px;
+    text-align: center;
+    font-size: 25px;
+    padding-bottom: 20px;
+    font-weight: bold;
+    padding-top: 10px;
+    font-family: "Open Sans",arial;
+    '>Activacion de cuenta</div>
+    <div class="card-body" style='
+        padding-left: 10px;
+        padding-bottom: 10px;
+        '>
+        <p style='
+            font-family: "Open Sans",arial;
+            font-weight: bold;
+            '>Bienvenido:</p>
+        <p style='color:gray;'>Dar click en el siguiente enlace para activar su cuenta:</p>
+        <a href="http://{{ dominio }}{% url 'mariabonita:activacion' uid token %}">http://{{ dominio }}{% url 'mariabonita:activacion' uid token %}</a>
+        </div>
+</div>
+
+<!--Pie de pagina-->
+<div style='
+margin-top: 35px;
+background-color:#474b4e;
+border-bottom-left-radius: 10px;
+border-bottom-right-radius: 10px;
+'>
+    <!-- Copyright -->
+    <div style='text-align: center; color:white;'> 
+        © 2020 Copyright:
+        <a style="color:white" href="">Pruebas</a>
+        <br>
+        <a style="color:white" href="">de</a>
+        <br>
+        <a style="color:white">mariabonita.com.mx</a>
+    </div>
+  <!-- Copyright -->
+</div>
+
+</body>
+
+</html>
