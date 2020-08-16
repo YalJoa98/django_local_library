@@ -62,6 +62,9 @@
                     <li class="nav-item {% if request.path == '/categorias' %} active {% endif %} px-lg-3">
                         <a class="nav-link text-uppercase text-expanded navbar-brand" href="{% url 'mariabonita:categorias' %}">{% trans 'Categorías' %}</a>
                     </li>
+                    <li>
+                        <a class="nav-item">Bienvenido</br></a>
+                    </li>
                     <li class="nav-item active {% if request.path == '/registro' %} active {% endif %} px-lg-3" >
                         <a class="nav-link" href="{% url 'mariabonita:registro' %}">Registro<span class="sr-only">(current)</span></a>
                     </li>
